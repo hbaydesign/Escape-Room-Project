@@ -7,8 +7,6 @@ ScriptsOnlyBuild:
     - OvrAvatar
     - OvrAvatarLocalDriver
     - OvrAvatarSettings
-    HTC.ViveInputUtility.Editor.dll:
-    - HTC.UnityPlugin.Vive.VIUVersionCheck
     HTC.ViveInputUtility.dll:
     - HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceConfigPanelController
     - HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceDeviceItem

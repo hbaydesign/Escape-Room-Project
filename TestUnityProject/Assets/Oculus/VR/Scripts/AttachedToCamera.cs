@@ -24,20 +24,25 @@ public class AttachedToCamera : MonoBehaviour
     {
         
         transform.localPosition = cameraTransform.localPosition + offsetFromCamera;
-        //Vector3 cameraEuler = cameraTransform.rotation.eulerAngles;
 
-        //cameraEuler.z = 0f;
+        //transform.rotation.eulerAngles.y = cameraTransform.rotation.eulerAngles.y;
+        /*Vector3 cameraEuler = cameraTransform.rotation.eulerAngles;
 
-        /*if(lockPitch)
+
+
+        if(lockPitch)
         {
+            cameraEuler.z = 0f;
             cameraEuler.x = 0f;
-        }*/
+        }
 
-       // Quaternion targetQuat = Quaternion.Euler(cameraEuler);
+        Quaternion targetQuat = Quaternion.Euler(cameraEuler);
 
-        //float angle = Quaternion.Angle(transform.rotation, targetQuat);
+        float angle = Quaternion.Angle(transform.rotation, targetQuat);
 
-        /*if(angle > turnBufferInDegrees)
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetQuat, turnSpeed);
+
+        if (angle > turnBufferInDegrees)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, targetQuat, turnSpeed);
         }*/
@@ -48,7 +53,23 @@ public class AttachedToCamera : MonoBehaviour
     {
         obj = GameObject.Find("Cube Chair");
         OVRGrabbable check = obj.GetComponent <OVRGrabbable>();
+
+        /*Vector3 cameraEuler = cameraTransform.rotation.eulerAngles;
+
+        if (lockPitch)
+        {
+            cameraEuler.z = 0f;
+            cameraEuler.x = 0f;
+        }
+
+        Quaternion targetQuat = Quaternion.Euler(cameraEuler);
+
+        float angle = Quaternion.Angle(transform.rotation, targetQuat);*/
+
         
+
+
+
         bool grabbedOnce = check.isGrabbed;
         if(grabbedOnce == true)
         {
@@ -58,6 +79,7 @@ public class AttachedToCamera : MonoBehaviour
         if (locked == true)
         {
             transform.localPosition = cameraTransform.localPosition + offsetFromCamera;
+            //transform.rotation = Quaternion.Lerp(transform.rotation, targetQuat, turnSpeed);
         }
 
         //transform.localPosition = cameraTransform.localPosition + offsetFromCamera;

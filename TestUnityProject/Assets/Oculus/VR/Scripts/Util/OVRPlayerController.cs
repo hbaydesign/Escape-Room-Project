@@ -222,7 +222,7 @@ public class OVRPlayerController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 			buttonRotation += RotationRatchet;
 
-		obj = GameObject.Find("Chair_01");
+		obj = GameObject.Find("Dog_Chair");
 		AttachedToCamera check = obj.GetComponent <AttachedToCamera>();
 		bool check1 = check.locked;
 
